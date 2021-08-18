@@ -1,0 +1,30 @@
+<ion-content>
+  <h1 align= center> Brasileiríssimo Music</h1>
+   <h3 align=center> Entre para a melhor plataforma de streaming de música brasileira <h3>
+  <form [formGroup]="authForm" (submit)="onSubmit">
+    <ion-item>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input type="email" placeholder="E-mail" formControlName="email" inputmode="email" autofocus=true>
+      </ion-input>
+      <ion-note slot="end" color="" *ngIf="email.dirty && email.hasError('required')">
+      </ion-note>
+      <ion-note slot="end" *ngIf="email.dirty && email.hasError('email')">
+      </ion-note>
+    </ion-item>
+    <ion-item>
+    <ion-icon name="Lock-open-outline" slot="start">
+    </ion-icon>
+    <ion-input type="password" placeholder="Insira sua senha" formControlName="password">
+    </ion-input>
+    <ion-note slot="end" *ngIf="password.dirty && password.hasError('required')">
+      </ion-note>
+    <ion-note slot="end" *ngIf="password.dirty && password.hasError('minlength')">
+      </ion-note>
+      </ion-item>
+      <ion-button expand="block" type="submit" [disabled]="authForm.invalid"> login </ion-button>
+      </form>
+      <ion-button expand="block" fill="clear" > Crie uma conta </ion-button>
+      <ion-button expand="block">
+        <ion-icon name="logo-twitter">Faça login pelo Twitter</ion-icon>
+
+
